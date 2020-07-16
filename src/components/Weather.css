@@ -1,0 +1,28 @@
+.mainImg {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    margin: 0px 100px;
+    left: 200px;
+}
+
+.weathercolumn {
+    position: relative;
+    left: 40px;
+}
+
+.weather {
+    display: inline-flex;
+    position: relative;
+}
+
+.ui.divided.horizontal.list {
+    margin-left: 0;
+    position: relative;
+    margin: 0px 30px;
+}
+
+
+ui.violet.inverted.header {
+    font-size: 700%;
+}
