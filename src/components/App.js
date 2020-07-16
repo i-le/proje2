@@ -134,7 +134,7 @@ class App extends React.Component {
         
             e.preventDefault()
         
-            Axios.get(`http://api.weatherstack.com/current?access_key=136d3d79f53cbbbf65c4d916ac33c569&query=${this.state.regionInput}`).then(res => {
+            Axios.get(`https://api.weatherstack.com/current?access_key=136d3d79f53cbbbf65c4d916ac33c569&query=${this.state.regionInput}`).then(res => {
         
               let userWeather = {
                 temperature: res.data.current.temperature,
