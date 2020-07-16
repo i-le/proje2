@@ -51,7 +51,7 @@ class App extends React.Component {
               this.setState({ userPosition: pos });
       
               //Weather Api call
-              Axios.get(`http://api.weatherstack.com/current?access_key=136d3d79f53cbbbf65c4d916ac33c569&query=${this.state.userPosition.latitude},${this.state.userPosition.longitude}`).then(res => {
+              Axios.get(`https://api.weatherstack.com/current?access_key=136d3d79f53cbbbf65c4d916ac33c569&query=${this.state.userPosition.latitude},${this.state.userPosition.longitude}`).then(res => {
       
                 let userWeather = {
                   temperature: res.data.current.temperature,
