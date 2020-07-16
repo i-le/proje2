@@ -51,25 +51,26 @@ class App extends React.Component {
               this.setState({ userPosition: pos });
       
               //Weather Api call
-              Axios.get(`https://api.weatherstack.com/current?access_key=136d3d79f53cbbbf65c4d916ac33c569&query=${this.state.userPosition.latitude},${this.state.userPosition.longitude}`).then(res => {
-      
+              Axios.get(`https://api.weatherstack.com/current?access_key=136d3d79f53cbbbf65c4d916ac33c569&query=${this.state.userPosition.latitude},${this.state.userPosition.longitude}`)
+              .then(res => {
+              console.log(res)
                 let userWeather = {
-                  temperature: res.data.current.temperature,
-                  description: res.data.current.weather_descriptions[0],
-                  location: res.data.location.name,
-                  region: res.data.location.region,
-                  country: res.data.location.country,
-                  wind_speed: res.data.current.wind_speed,
-                  pressure: res.data.current.pressure,
-                  precip: res.data.current.precip,
-                  humidity: res.data.current.humidity,
-                  img: res.data.current.weather_icons
+                  temperature: res.data.current?.temperature,
+                  description: res.data.current?.weather_descriptions[0],
+                  location: res.data.location?.name,
+                  region: res.data.location?.region,
+                  country: res.data.location?.country,
+                  wind_speed: res.data.current?.wind_speed,
+                  pressure: res.data.current?.pressure,
+                  precip: res.data.current?.precip,
+                  humidity: res.data.current?.humidity,
+                  img: res.data.current?.weather_icons
                 }
                       
                        
                 this.setState({ weather: userWeather });
               })
-            })
+            }).catch(err => console.error(err))
           }
     }
     // 在任何时候如果有人按下回车/ 在search bar打字并submit 这个search form
